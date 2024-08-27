@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".HomeFragment"
+    android:background="@color/black">
+
+    <Switch
+        android:id="@+id/switch_ego"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:trackTint="#ff0006"
+        android:trackTintMode="add"
+        android:checked="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.6"
+        app:layout_constraintHorizontal_bias="0.85"
+        android:switchMinWidth="70dp"/>
+
+    <TextView
+        android:id="@+id/text_ego"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ego"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@id/switch_ego"
+        app:layout_constraintTop_toBottomOf="@id/switch_ego"
+        app:layout_constraintEnd_toEndOf="@id/switch_ego"
+        android:textSize="24sp"/>
+
+    <Switch
+        android:id="@+id/switch_respect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:trackTint="#00ff00"
+        android:trackTintMode="add"
+        android:checked="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.6"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:switchMinWidth="70dp"/>
+
+    <TextView
+        android:id="@+id/text_respect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/respect"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@id/switch_respect"
+        app:layout_constraintTop_toBottomOf="@id/switch_respect"
+        app:layout_constraintEnd_toEndOf="@id/switch_respect"
+        android:textSize="24sp"/>
+
+    <Switch
+        android:id="@+id/switch_giving"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:trackTint="#00ff00"
+        android:trackTintMode="add"
+        android:checked="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.6"
+        app:layout_constraintHorizontal_bias="0.15"
+        android:switchMinWidth="70dp"/>
+
+    <TextView
+        android:id="@+id/text_giving"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/giving"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@id/switch_giving"
+        app:layout_constraintTop_toBottomOf="@id/switch_giving"
+        app:layout_constraintEnd_toEndOf="@id/switch_giving"
+        android:textSize="24sp"/>
+
+    <Switch
+        android:id="@+id/switch_happines"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:trackTint="#00ff00"
+        android:trackTintMode="add"
+        android:checked="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.4"
+        app:layout_constraintHorizontal_bias="0.15"
+        android:switchMinWidth="70dp"/>
+
+    <TextView
+        android:id="@+id/text_happines"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/happines"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@id/switch_happines"
+        app:layout_constraintTop_toBottomOf="@id/switch_happines"
+        app:layout_constraintEnd_toEndOf="@id/switch_happines"
+        android:textSize="24sp"/>
+
+    <Switch
+        android:id="@+id/switch_optimism"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:trackTint="#00ff00"
+        android:trackTintMode="add"
+        android:checked="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.4"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:switchMinWidth="70dp"/>
+
+
+    <TextView
+        android:id="@+id/text_optimism"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/optimism"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@id/switch_optimism"
+        app:layout_constraintTop_toBottomOf="@id/switch_optimism"
+        app:layout_constraintEnd_toEndOf="@id/switch_optimism"
+        android:textSize="24sp"/>
+
+    <Switch
+        android:id="@+id/switch_kindness"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:trackTint="#00ff00"
+        android:trackTintMode="add"
+        android:checked="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.4"
+        app:layout_constraintHorizontal_bias="0.85"
+        android:switchMinWidth="70dp"/>
+
+
+    <TextView
+        android:id="@+id/text_kindness"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/kindness"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@id/switch_kindness"
+        app:layout_constraintTop_toBottomOf="@id/switch_kindness"
+        app:layout_constraintEnd_toEndOf="@id/switch_kindness"
+        android:textSize="24sp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

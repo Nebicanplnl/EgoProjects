@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.egoprojects.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/givingFragment"
+        android:name="com.example.egoprojects.GivingFragment"
+        android:label="fragment_giving"
+        tools:layout="@layout/fragment_giving" />
+    <fragment
+        android:id="@+id/happinesFragment"
+        android:name="com.example.egoprojects.HappinesFragment"
+        android:label="fragment_happines"
+        tools:layout="@layout/fragment_happines" />
+    <fragment
+        android:id="@+id/optimismFragment"
+        android:name="com.example.egoprojects.OptimismFragment"
+        android:label="fragment_optimism"
+        tools:layout="@layout/fragment_optimism" />
+    <fragment
+        android:id="@+id/respectFragment"
+        android:name="com.example.egoprojects.RespectFragment"
+        android:label="fragment_respect"
+        tools:layout="@layout/fragment_respect" />
+    <fragment
+        android:id="@+id/kindnessFragment"
+        android:name="com.example.egoprojects.KindnessFragment"
+        android:label="fragment_kindness"
+        tools:layout="@layout/fragment_kindness" />
 
 </navigation>
