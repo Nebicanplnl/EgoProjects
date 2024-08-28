@@ -9,7 +9,23 @@
         android:id="@+id/homeFragment"
         android:name="com.example.egoprojects.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_givingFragment"
+            app:destination="@id/givingFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_optimismFragment"
+            app:destination="@id/optimismFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_respectFragment"
+            app:destination="@id/respectFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_happinesFragment"
+            app:destination="@id/happinesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_kindnessFragment"
+            app:destination="@id/kindnessFragment" />
+    </fragment>
     <fragment
         android:id="@+id/givingFragment"
         android:name="com.example.egoprojects.GivingFragment"

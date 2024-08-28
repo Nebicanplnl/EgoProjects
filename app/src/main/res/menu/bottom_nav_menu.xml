@@ -1,24 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/givingFragment"
-        android:title="Giving"
-        android:icon="@drawable/ic_giving"/>
 
-    <item android:id="@+id/happinesFragment"
-        android:title="Happines"
-        android:icon="@drawable/ic_hands"/>
-
-    <item android:id="@+id/optimismFragment"
-        android:title="Optimism"
-        android:icon="@drawable/ic_optimism"/>
-
-    <item android:id="@+id/respectFragment"
-        android:title="Respect"
-        android:icon="@drawable/ic_respec"/>
-
-    <item android:id="@+id/kindnessFragment"
-        android:title="Kindness"
-        android:icon="@drawable/ic_kindness"/>
 
 </menu>
