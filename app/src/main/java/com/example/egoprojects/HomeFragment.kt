@@ -1,20 +1,25 @@
 package com.example.egoprojects
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.egoprojects.databinding.FragmentHomeBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class HomeFragment : Fragment(R.layout.fragment_home) {
+
+class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
 
+    private val bottomNav: BottomNavigationView? get() = (activity as? MainActivity)?.bottomNav
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -22,6 +27,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     ): View? {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -39,29 +45,68 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         }
         binding.switchGiving.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
-                addBottomNavigationItem(bottomNavDescription = "g", index = 1, menuIcon = R.drawable.ic_giving )
-            }else{
+                addBottomNavigationItem(
+                    bottomNavDescription = "Giving",
+                    index = 1,
+                    menuIcon = R.drawable.ic_giving,
+
+                )
+            } else {
                 deleteBottomNavigationItem(index = 1)
             }
         }
         binding.switchOptimism.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
-                addBottomNavigationItem(bottomNavDescription = "o", index = 2, menuIcon = R.drawable.ic_optimism )
-            }else {
+                addBottomNavigationItem(
+                    bottomNavDescription = "Optimism",
+                    index = 2,
+                    menuIcon = R.drawable.ic_optimism,
+
+                )
+            } else {
                 deleteBottomNavigationItem(index = 2)
             }
         }
         binding.switchRespect.setOnCheckedChangeListener { _, isChecked ->
-            addBottomNavigationItem(bottomNavDescription = "r", index = 3, menuIcon = R.drawable.ic_respec )
+            if (isChecked) {
+                addBottomNavigationItem(
+                    bottomNavDescription = "Respect",
+                    index = 3,
+                    menuIcon = R.drawable.ic_respec,
+
+                )
+            } else {
+                deleteBottomNavigationItem(index = 3)
+            }
+
         }
         binding.switchHappines.setOnCheckedChangeListener { _, isChecked ->
-            addBottomNavigationItem(bottomNavDescription = "h", index = 4, menuIcon = R.drawable.ic_hands )
+            if (isChecked) {
+                addBottomNavigationItem(
+                    bottomNavDescription = "Happines",
+                    index = 4,
+                    menuIcon = R.drawable.ic_hands,
+
+                )
+            } else {
+                deleteBottomNavigationItem(index = 4)
+            }
+
         }
         binding.switchKindness.setOnCheckedChangeListener { _, isChecked ->
-            addBottomNavigationItem(bottomNavDescription = "k", index = 5, menuIcon = R.drawable.ic_kindness )
-        }
+            if (isChecked) {
+                addBottomNavigationItem(
+                    bottomNavDescription = "Kindness",
+                    index = 5,
+                    menuIcon = R.drawable.ic_kindness,
 
+                )
+            } else {
+                deleteBottomNavigationItem(index = 5)
+            }
+        }
     }
+
 
     private fun isEnabledSwitches(checked: Boolean) {
         val switches = listOf(
@@ -71,42 +116,54 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             binding.switchRespect,
             binding.switchOptimism
         )
-        switches.forEach{
+        switches.forEach {
             it.isEnabled = checked.not()
+        }
+        if (checked) {
+            switches.forEach { switches ->
+                switches.isChecked = false
+                switches.isEnabled = false
+
+            }
+
+        } else {
+            switches.forEach { switches ->
+                switches.isEnabled = true
+            }
         }
 
     }
 
     private fun deleteBottomNavigationItem(index: Int) {
-        val bottomNavigationView =
-            requireActivity().findViewById<BottomNavigationView>(R.id.bottomNav)
-        bottomNavigationView.menu.removeItem(index)
+
+        bottomNav!!.menu.removeItem(index)
     }
 
     private fun controlBottomNavigationBar(isEgoChecked: Boolean) {
-        val bottomNavigationView =
-            requireActivity().findViewById<BottomNavigationView>(R.id.bottomNav)
+
         if (isEgoChecked) {
-            bottomNavigationView.visibility = View.GONE
+            bottomNav!!.visibility = View.GONE
         } else {
-            bottomNavigationView.visibility = View.VISIBLE
-            addBottomNavigationItem(isEgoChecked, )
+            bottomNav!!.visibility = View.VISIBLE
+            addBottomNavigationItem(isEgoChecked)
         }
     }
 
 
+    private fun addBottomNavigationItem(
+        isSwitchEgoItem: Boolean = false,
+        bottomNavDescription: String = "EgoSwitch",
+        index: Int = 0,
+        menuIcon: Int = R.drawable.baseline_egg_24,
 
-    private fun addBottomNavigationItem(isSwitchEgoItem: Boolean = false, bottomNavDescription: String = "EgoSwitch", index: Int = 0, menuIcon: Int = R.drawable.baseline_egg_24) {
-        val bottomNavigationView =
-            requireActivity().findViewById<BottomNavigationView>(R.id.bottomNav)
-        val menu = bottomNavigationView.menu
 
+    ) {
+
+        val menu = bottomNav!!.menu
 
         if (menu.size() > 4) {
-            Toast.makeText(requireContext(), "Bottom navigation menu is full",Toast.LENGTH_SHORT).show()
             return
         }
-
 
         if (isSwitchEgoItem) {
             menu.clear()
@@ -116,15 +173,11 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             menu.add(Menu.NONE, index, Menu.NONE, bottomNavDescription).setIcon(menuIcon)
         }
     }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
-
 }
-
-
 
 
 

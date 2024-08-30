@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+<!--    <item android:id="@+id/homeFragment" android:title="@string/ego" android:icon="@drawable/baseline_egg_24" />-->
+<!--    <item android:id="@+id/givingFragment" android:title="@string/giving" android:icon="@drawable/ic_giving" />-->
+<!--    <item android:id="@+id/happinesFragment" android:title="@string/happines" android:icon="@drawable/ic_hands" />-->
+<!--    <item android:id="@+id/kindnessFragment" android:title="@string/kindness" android:icon="@drawable/ic_kindness" />-->
+<!--    <item android:id="@+id/optimismFragment" android:title="@string/optimism" android:icon="@drawable/ic_optimism" />-->
+<!--    <item android:id="@+id/respectFragment" android:title="@string/respect" android:icon="@drawable/ic_respec" />-->
 
 
 </menu>

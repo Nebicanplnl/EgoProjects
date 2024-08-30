@@ -166,4 +166,6 @@
         app:layout_constraintEnd_toEndOf="@id/switch_kindness"
         android:textSize="24sp"/>
 
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
