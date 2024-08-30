@@ -1,6 +1,7 @@
 package com.example.egoprojects
 
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -43,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         return when (item.itemId) {
             0 -> {
                 findNavController(R.id.navhHostFragment).navigate(R.id.homeFragment)
-                true
+                false
             }
             1 -> {
                 findNavController(R.id.navhHostFragment).navigate(R.id.givingFragment)

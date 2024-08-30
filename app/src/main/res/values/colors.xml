@@ -3,4 +3,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="green">#56B305</color>
+    <color name="blue">#093EDC</color>
+    <color name="orange">#F59300</color>
+    <color name="red">#FB4449</color>
+    <color name="purple">#9205CD</color>
 </resources>

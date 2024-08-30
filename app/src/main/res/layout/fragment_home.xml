@@ -14,7 +14,6 @@
     android:text=""
     android:trackTint="#ff0006"
     android:trackTintMode="add"
-    android:checked="true"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"

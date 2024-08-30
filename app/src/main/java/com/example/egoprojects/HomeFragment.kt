@@ -3,13 +3,10 @@ package com.example.egoprojects
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.Menu
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import com.example.egoprojects.databinding.FragmentHomeBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -17,6 +14,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
+    private var firstOpen: Boolean? = null
+
 
 
     private val bottomNav: BottomNavigationView? get() = (activity as? MainActivity)?.bottomNav
@@ -33,10 +32,11 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        if (firstOpen == null) {
+            firstOpen = true
+            binding.switchEgo.isChecked = true
+        }
 
-        binding.switchEgo.isChecked = true
-        controlBottomNavigationBar(binding.switchEgo.isChecked)
-        isEnabledSwitches(binding.switchEgo.isChecked)
 
         binding.switchEgo.setOnCheckedChangeListener { _, isChecked ->
             controlBottomNavigationBar(isChecked)
@@ -99,7 +99,6 @@ class HomeFragment : Fragment() {
                     bottomNavDescription = "Kindness",
                     index = 5,
                     menuIcon = R.drawable.ic_kindness,
-
                 )
             } else {
                 deleteBottomNavigationItem(index = 5)
@@ -149,21 +148,20 @@ class HomeFragment : Fragment() {
         }
     }
 
-
     private fun addBottomNavigationItem(
         isSwitchEgoItem: Boolean = false,
         bottomNavDescription: String = "EgoSwitch",
         index: Int = 0,
         menuIcon: Int = R.drawable.baseline_egg_24,
-
-
     ) {
 
         val menu = bottomNav!!.menu
 
-        if (menu.size() > 4) {
+        if (menu.size() > 4 && !isSwitchEgoItem) {
+            Toast.makeText(requireContext(), "Too many items", Toast.LENGTH_SHORT).show()
             return
         }
+
 
         if (isSwitchEgoItem) {
             menu.clear()
