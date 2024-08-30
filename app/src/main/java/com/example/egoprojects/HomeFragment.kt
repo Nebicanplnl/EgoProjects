@@ -14,9 +14,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
-    private var firstOpen: Boolean? = null
 
-
+//    private val viewModel: ViewModel2 by viewModels()
 
     private val bottomNav: BottomNavigationView? get() = (activity as? MainActivity)?.bottomNav
 
@@ -32,17 +31,37 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        if (firstOpen == null) {
-            firstOpen = true
-            binding.switchEgo.isChecked = true
-            controlBottomNavigationBar(true)
-            addBottomNavigationItem(isSwitchEgoItem = true)
-            isEnabledSwitches(true)
-        }
+//        viewModel.switchStates.observe(viewLifecycleOwner, Observer { switchStates ->
+//            val switches = listOf(
+//                binding.switchGiving,
+//                binding.switchHappines,
+//                binding.switchKindness,
+//                binding.switchRespect,
+//                binding.switchOptimism
+//            )
+//            switches.forEach {
+//          //      it.isEnabled = switchStates.isEgoBottonEnabled
+//            }
+//
+//
+//
+//        })
+//        viewModel.navigationItems.observe(viewLifecycleOwner, Observer { items ->
+//            bottomNav?.menu?.clear()
+//            items.forEach { item ->
+//                bottomNav?.menu?.add(Menu.NONE, item.id, Menu.NONE, item.description)?.setIcon(item.icon)
+//            }
+//        })
 
+        binding.switchEgo.isChecked = true
+        controlBottomNavigationBar(binding.switchEgo.isChecked)
+        isEnabledSwitches(binding.switchEgo.isChecked)
 
         binding.switchEgo.setOnCheckedChangeListener { _, isChecked ->
-
+           // viewModel.isEgoBottonEnabled(isChecked)
+            controlBottomNavigationBar(isChecked)
+            addBottomNavigationItem(isSwitchEgoItem = true)
+            isEnabledSwitches(isChecked)
         }
         binding.switchGiving.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
