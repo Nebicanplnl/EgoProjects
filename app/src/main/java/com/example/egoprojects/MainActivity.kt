@@ -32,12 +32,13 @@ class MainActivity : AppCompatActivity() {
 
         bottomNav = binding.bottomNav
 
-        bottomNav!!.setOnItemSelectedListener { item ->
+        bottomNav.setOnItemSelectedListener { item ->
             bottomNavigationSelected(item)
         }
 
 
     }
+
     private fun bottomNavigationSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             0 -> {
@@ -49,15 +50,15 @@ class MainActivity : AppCompatActivity() {
                 true
             }
             2 -> {
-                findNavController(R.id.navhHostFragment).navigate(R.id.happinesFragment)
-                true
-            }
-            3 -> {
                 findNavController(R.id.navhHostFragment).navigate(R.id.optimismFragment)
                 true
             }
-            4 -> {
+            3 -> {
                 findNavController(R.id.navhHostFragment).navigate(R.id.respectFragment)
+                true
+            }
+            4 -> {
+                findNavController(R.id.navhHostFragment).navigate(R.id.happinesFragment)
                 true
             }
             5 -> {
@@ -67,6 +68,7 @@ class MainActivity : AppCompatActivity() {
             else -> false
         }
     }
+
 
 }
 
