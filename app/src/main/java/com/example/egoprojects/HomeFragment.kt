@@ -35,13 +35,14 @@ class HomeFragment : Fragment() {
         if (firstOpen == null) {
             firstOpen = true
             binding.switchEgo.isChecked = true
+            controlBottomNavigationBar(true)
+            addBottomNavigationItem(isSwitchEgoItem = true)
+            isEnabledSwitches(true)
         }
 
 
         binding.switchEgo.setOnCheckedChangeListener { _, isChecked ->
-            controlBottomNavigationBar(isChecked)
-            addBottomNavigationItem(isSwitchEgoItem = true)
-            isEnabledSwitches(isChecked)
+
         }
         binding.switchGiving.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
